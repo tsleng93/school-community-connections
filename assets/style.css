@@ -37,7 +37,16 @@ body {
 .site-header-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0.9rem 1.25rem 0.8rem;
+  padding: 1rem 1.25rem 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.site-header-brand {
+  min-width: 0;
 }
 
 /* Project logo (icon + wordmark + strapline, all in one image). The
@@ -45,23 +54,27 @@ body {
    visible <h1> — see the markup in index.html/contact.html. */
 .site-logo img {
   display: block;
-  max-width: 260px;
+  max-width: 240px;
   width: 100%;
   height: auto;
 }
 
-/* Optional additional logo row (e.g. university/funder logos) — see the
-   commented-out example near the top of index.html/contact.html. */
+/* University/funder logo(s), top right — sized to sit at similar visual
+   weight to the project logo on the left, rather than as a small
+   afterthought. Add more logos (e.g. a funder) as extra <img> tags
+   inside .site-header-logos and they'll lay out side by side. */
 .site-header-logos {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  margin-top: 0.75rem;
+  gap: 1.5rem;
+  flex-shrink: 0;
 }
 
 .site-header-logos img {
-  height: 28px;
-  width: auto;
+  display: block;
+  max-width: 200px;
+  width: 100%;
+  height: auto;
 }
 
 .site-header p.tagline {

@@ -14,13 +14,17 @@
 
 <header class="site-header">
   <div class="site-header-inner">
-    <p class="site-logo">
-      <a href="index.html">
-        <img src="assets/logo.png" alt="The School and Community Connections Study — mapping interactions in and beyond school to understand illness and absence">
-      </a>
-    </p>
-    <p class="tagline">A research project from Lancaster Medical School, Lancaster University</p>
-    <!-- See index.html for the optional-logos comment block -->
+    <div class="site-header-brand">
+      <p class="site-logo">
+        <a href="index.html">
+          <img src="assets/logo.png" alt="The School and Community Connections Study — mapping interactions in and beyond school to understand illness and absence">
+        </a>
+      </p>
+      <p class="tagline">A research project from Lancaster Medical School, Lancaster University</p>
+    </div>
+    <div class="site-header-logos">
+      <img src="assets/lancaster-logo.png" alt="Lancaster University">
+    </div>
   </div>
   <nav class="site-nav-bar">
     <div class="site-nav">
@@ -45,9 +49,12 @@
     server of your own. No account or API key required.
 
     ONE-TIME SETUP — IMPORTANT, READ THIS:
-    1. The form below posts to https://formsubmit.co/t.leng@lancaster.ac.uk
-       — change that email address in the <form action="..."> line if
-       enquiries should go elsewhere. Also update the "_next" hidden
+    1. The form below currently posts to
+       https://formsubmit.co/trystanleng@gmail.com — this is a TEMPORARY
+       testing address, swapped in to check whether Lancaster's mail
+       filtering was blocking delivery to t.leng@lancaster.ac.uk. Once
+       delivery is confirmed working, change the address back in the
+       <form action="..."> line below. Also update the "_next" hidden
        field further down to match your site's real, full URL (it must
        be an absolute https://... address, not just "thanks.html" —
        FormSubmit misbehaves with a relative one and shows a confusing
@@ -78,7 +85,7 @@
   -->
   <div class="card">
     <h3>Send us a message</h3>
-    <form action="https://formsubmit.co/t.leng@lancaster.ac.uk" method="POST">
+    <form action="https://formsubmit.co/trystanleng@gmail.com" method="POST">
       <div class="form-row">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required>
