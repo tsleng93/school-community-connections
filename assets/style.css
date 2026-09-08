@@ -1,0 +1,282 @@
+/* ==========================================================================
+   The School and Community Connections Study — site stylesheet
+   Light-touch, easy to edit. Colors are set as CSS variables below —
+   change them in one place (the :root block) to re-theme the whole site.
+   ========================================================================== */
+
+:root {
+  --color-bg: #fbfaf7;
+  --color-surface: #ffffff;
+  --color-text: #2a2a28;
+  --color-muted: #5c5c58;
+  --color-primary: #1f3b4d;      /* dark slate navy, matches the logo wordmark — headings, nav bar */
+  --color-primary-light: #e6f1f0;
+  --color-accent: #17917d;       /* teal, matches the logo mark — links, buttons */
+  --color-border: #e6e2d8;
+  --max-width: 780px;
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+}
+
+.site-header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.9rem 1.25rem 0.8rem;
+}
+
+/* Project logo (icon + wordmark + strapline, all in one image). The
+   image already carries the title text, so it doubles as the page's
+   visible <h1> — see the markup in index.html/contact.html. */
+.site-logo img {
+  display: block;
+  max-width: 260px;
+  width: 100%;
+  height: auto;
+}
+
+/* Optional additional logo row (e.g. university/funder logos) — see the
+   commented-out example near the top of index.html/contact.html. */
+.site-header-logos {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 0.75rem;
+}
+
+.site-header-logos img {
+  height: 28px;
+  width: auto;
+}
+
+.site-header p.tagline {
+  margin: 0.4rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+nav.site-nav-bar {
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+nav.site-nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.6rem 1.25rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+nav.site-nav a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px 8px 0 0;
+  border: 1px solid transparent;
+  border-bottom: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+nav.site-nav a:hover {
+  background: var(--color-primary-light);
+}
+
+nav.site-nav a[aria-current="page"] {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+h1, h2, h3 {
+  color: var(--color-primary);
+  line-height: 1.25;
+}
+
+h2 {
+  margin-top: 2.25rem;
+  font-size: 1.3rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.35rem;
+}
+
+a { color: var(--color-accent); }
+
+.lede {
+  font-size: 1.1rem;
+  color: var(--color-muted);
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.4rem;
+  margin: 1.25rem 0;
+}
+
+.card h3 { margin-top: 0; }
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.person img {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.person .person-text { flex: 1; min-width: 200px; }
+
+.notice {
+  background: var(--color-primary-light);
+  border-left: 4px solid var(--color-primary);
+  padding: 0.9rem 1.1rem;
+  border-radius: 6px;
+  margin: 1.25rem 0;
+}
+
+.button {
+  display: inline-block;
+  background: var(--color-accent);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.6rem 1.1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.button:hover { opacity: 0.92; }
+
+ul.file-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.file-list li {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.6rem;
+  background: var(--color-surface);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+ul.file-list .file-note {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.status-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+/* ---- Contact form ---- */
+
+.form-row {
+  margin-bottom: 1rem;
+}
+
+.form-row label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  color: var(--color-text);
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  font: inherit;
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 0.55rem 0.7rem;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.form-status {
+  margin-top: 0.9rem;
+  font-size: 0.92rem;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+footer.site-footer {
+  border-top: 1px solid var(--color-border);
+  margin-top: 2rem;
+}
+
+footer.site-footer .site-footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 480px) {
+  nav.site-nav { gap: 0.1rem 0.75rem; }
+}
