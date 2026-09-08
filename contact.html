@@ -47,7 +47,11 @@
     ONE-TIME SETUP — IMPORTANT, READ THIS:
     1. The form below posts to https://formsubmit.co/t.leng@lancaster.ac.uk
        — change that email address in the <form action="..."> line if
-       enquiries should go elsewhere.
+       enquiries should go elsewhere. Also update the "_next" hidden
+       field further down to match your site's real, full URL (it must
+       be an absolute https://... address, not just "thanks.html" —
+       FormSubmit misbehaves with a relative one and shows a confusing
+       "Form should POST" error instead of actually failing clearly).
     2. Publish the site, then submit this form once yourself (any test
        message). The VERY FIRST submission to a given address does NOT
        arrive as a normal enquiry — FormSubmit instead sends an
@@ -103,7 +107,7 @@
       <input type="hidden" name="_subject" value="New enquiry — The School and Community Connections Study website">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="thanks.html">
+      <input type="hidden" name="_next" value="https://tsleng93.github.io/school-community-connections/thanks.html">
       <!-- Honeypot field to deter simple spam bots — kept hidden from real visitors via CSS -->
       <input type="text" name="_honey" class="hp-field" tabindex="-1" autocomplete="off">
 
