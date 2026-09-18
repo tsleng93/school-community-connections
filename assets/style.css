@@ -46,35 +46,39 @@ body {
 }
 
 .site-header-brand {
+  flex: 1 1 260px;
   min-width: 0;
 }
 
 /* Project logo (icon + wordmark + strapline, all in one image). The
    image already carries the title text, so it doubles as the page's
-   visible <h1> — see the markup in index.html/contact.html. */
+   visible <h1> — see the markup in index.html/contact.html.
+   Sized by HEIGHT (not width: 100%) so it can't be squashed by flex
+   layout — width:100% on a flex child is unreliable across browsers
+   and was causing this logo to shrink unpredictably. */
 .site-logo img {
   display: block;
-  max-width: 240px;
-  width: 100%;
-  height: auto;
+  height: 62px;
+  width: auto;
+  max-width: 100%;
 }
 
-/* University/funder logo(s), top right — sized to sit at similar visual
-   weight to the project logo on the left, rather than as a small
-   afterthought. Add more logos (e.g. a funder) as extra <img> tags
-   inside .site-header-logos and they'll lay out side by side. */
+/* University/funder logo(s), top right — sized to the SAME height as
+   the project logo above, so the two read as equally prominent. Add
+   more logos (e.g. a funder) as extra <img> tags inside
+   .site-header-logos and they'll lay out side by side at this height. */
 .site-header-logos {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  flex-shrink: 0;
+  flex: 0 0 auto;
 }
 
 .site-header-logos img {
   display: block;
-  max-width: 200px;
-  width: 100%;
-  height: auto;
+  height: 62px;
+  width: auto;
+  max-width: 100%;
 }
 
 .site-header p.tagline {
@@ -292,4 +296,8 @@ footer.site-footer .site-footer-inner {
 
 @media (max-width: 480px) {
   nav.site-nav { gap: 0.1rem 0.75rem; }
+  .site-logo img,
+  .site-header-logos img {
+    height: 46px;
+  }
 }
